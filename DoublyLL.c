@@ -21,18 +21,19 @@ void printList(){
 void delete(int data){
 	struct node * temp=head;
 	struct node * prev=NULL;
-	while(temp->data!=data){
+	while(temp->data!=data && temp!=NULL){
 		temp=temp->next;
 	}
 	if(temp==head){
-		if(head->next==NULL){
+		//if(head->next==NULL){
 
-		head=NULL;
-		free(temp);
-		return;
-	}
+		//head=NULL;
+		//free(temp);
+		//return;
+	//}
 	head=head->next;
 	head->prev=NULL;
+	free(temp);
 	return;
 	}
 
@@ -146,7 +147,8 @@ int main()
 	printList();
 	printf("\n");
 
-	insert(100,4);
+	delete(1);
+
 
 	printList();
 
