@@ -25,12 +25,7 @@ void delete(int data){
 		temp=temp->next;
 	}
 	if(temp==head){
-		//if(head->next==NULL){
 
-		//head=NULL;
-		//free(temp);
-		//return;
-	//}
 	head=head->next;
 	head->prev=NULL;
 	free(temp);
