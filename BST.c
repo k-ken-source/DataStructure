@@ -131,12 +131,16 @@ struct node * Next_Largest(struct node * root, struct node * n){
 }
 
 struct node * delete(struct node * root, int value){
+
+	if(root==NULL){
+		return NULL;
+	}
 	if(root->data > value){
-		root=delete(root->left,value);
+		root->left=delete(root->left,value);
 	}
 
 	else if(root->data < value){
-		root=delete(root->right,value);
+		root->right=delete(root->right,value);
 	}
 	else{
 		if(root->left==NULL){
@@ -155,7 +159,7 @@ struct node * delete(struct node * root, int value){
 		struct node * temp=min(root->right);
 		root->data=temp->data;
 		root->right=delete(root->right,temp->data);
-}
+		}
 		
 	}
 	return root;
