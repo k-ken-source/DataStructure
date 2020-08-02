@@ -22,8 +22,26 @@ class Graph(object):
 				if visited[i]==False:
 					visited[i] = True
 					queue.append(i)
+	
+	def bfs_erik_style(self,s):
+		level ={s:0}
+		parent={s:None}
+		queue = [s]
+		i=1
 
+		while queue:
+			next_queue=[]
 
+			for u in queue:
+				for v in self.graph[u]:
+					if v not in level:
+						level[v]=i
+						parent[v]=u
+						next_queue.append(v)
+			queue=next_queue
+			i+=1
+		print(level)
+		print(parent)
 
 
 obj=Graph()
@@ -37,4 +55,4 @@ for i in range(n):
 
 s=int(input('source-'))
 
-obj.BFS(s)
+obj.bfs_erik_style(s)
