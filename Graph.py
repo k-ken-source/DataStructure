@@ -5,6 +5,7 @@ from collections import defaultdict
 class Graph(object):
 	def __init__(self):
 		self.graph = defaultdict(list)
+		self.parent ={}
 
 	def add_edges(self,u,v):
 		self.graph[u].append(v)
@@ -43,6 +44,22 @@ class Graph(object):
 		print(level)
 		print(parent)
 
+#Allows You to Visit All the Nodes of a graph once, in a depth first manner // Can be utilised in solving many problems. 
+	def DFS_visit(self,s):
+		for v in self.graph[s]:
+			if v not in self.parent:
+				self.parent[v]=True
+				self.DFS_visit(v)
+
+	def DFS(self):
+		for s in list(self.graph.keys()):
+			if s not in self.parent:
+				self.parent[s]=True
+				self.DFS_visit(s)
+		print("ALL NODES THAT ARE VISITED - ",list(self.parent.keys()))
+
+
+
 
 obj=Graph()
 
@@ -53,6 +70,7 @@ for i in range(n):
 
 	obj.add_edges(u,v)
 
-s=int(input('source-'))
+obj.DFS()
+#s=int(input('source-'))
 
-obj.bfs_erik_style(s)
+#obj.bfs_erik_style(s)
