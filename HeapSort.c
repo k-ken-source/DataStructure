@@ -45,8 +45,9 @@ void Heap_Sort(int * A,int size){
 }
 
 }
-int main(){
-	int arr[]={4,5,2,6,8,9,6,5,1,0};
+int main()
+{
+	int arr[]={1,2,4,9,0,10,100,112,333,0};
 	int i;
 	int n=sizeof(arr)/sizeof(arr[0]);
 	printf("size-%d\n",n );
