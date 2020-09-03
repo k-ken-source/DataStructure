@@ -42,7 +42,7 @@ class Graph(object):
         self.graph = sorted(self.graph,key=lambda x: x[2])
 
 #OBSERVATION        
-# If there are n vertices in the graph then are going to be n-1 edges in the graph
+# If there are n vertices in the graph then are going to be n-1 edges in the MST
         e=self.no_of_vertices-1
         i=0
         while e: 
