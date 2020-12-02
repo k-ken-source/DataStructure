@@ -60,17 +60,17 @@ class Graph(object):
 
 
 
+if __name__=='__main__':
+	obj=Graph()
 
-obj=Graph()
+	n=int(input("number of Edges"))
 
-n=int(input("number of Edges"))
+	for i in range(n):
+		u,v=map(int,input().split())
 
-for i in range(n):
-	u,v=map(int,input().split())
+		obj.add_edges(u,v)
 
-	obj.add_edges(u,v)
+	obj.DFS()
+	#s=int(input('source-'))
 
-obj.DFS()
-#s=int(input('source-'))
-
-#obj.bfs_erik_style(s)
+	#obj.bfs_erik_style(s)
